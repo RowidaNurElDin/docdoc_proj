@@ -1,3 +1,5 @@
+import 'package:untitled1/features/chat/presentation/chat_screen.dart';
+
 import '../../../../core/dependency_injection/dependency_injection.dart';
 import '../../../../core/routing/routes.dart';
 import '../../../../features/home/home_screen.dart';
@@ -16,14 +18,15 @@ class AppRouter{
         );
       case Routes.loginScreen:
         return MaterialPageRoute(
-            builder: (_) => BlocProvider(
-              create: (context) => getIt<LoginCubit>(),
-              child: const LoginScreen(),
-            )
+            builder: (_) => ChatScreen()
+            //  BlocProvider(
+            //   create: (context) => getIt<LoginCubit>(),
+            //   child: const LoginScreen(),
+            // )
         );
       case Routes.homeScreen:
         return MaterialPageRoute(
-            builder: (_) => const HomeScreen()
+            builder: (_) =>  ChatScreen()
         );
       default:
         return MaterialPageRoute(
